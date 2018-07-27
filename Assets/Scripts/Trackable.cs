@@ -11,7 +11,7 @@ public struct Trackable {
     }
 
     public Trackable(Transform transform) {
-        Position = transform.localPosition;
+        Position = transform.position;
         Rotation = transform.localRotation;
     }
 

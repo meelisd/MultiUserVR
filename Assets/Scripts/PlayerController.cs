@@ -57,6 +57,7 @@ public class PlayerController : NetworkBehaviour {
 			SyncedTrackables[2] = trackables[2];
 			SyncedTrackables[3] = trackables[3];
 		} else {
+			Debug.Log("send: " + trackables[0].Position + " - " + trackables[0].Rotation);
 			CmdSyncTrackables(trackables);
 		}
 	}
