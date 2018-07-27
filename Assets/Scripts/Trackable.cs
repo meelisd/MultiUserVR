@@ -12,7 +12,7 @@ public struct Trackable {
 
     public Trackable(Transform transform) {
         Position = transform.position;
-        Rotation = transform.localRotation;
+        Rotation = transform.rotation;
     }
 
     public Trackable(Vector3 position, Quaternion rotation) {

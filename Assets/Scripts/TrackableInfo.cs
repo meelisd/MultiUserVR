@@ -15,12 +15,17 @@ public class TrackableInfo : MonoBehaviour
         if (!Head || !LeftHand || !RightHand) {
             return new Trackable[0];
         }
-        var rootRot = Root.transform.rotation;
+        var rootRot = Root.transform.rotation.eulerAngles;
+        var rootPos = Root.transform.position;
         var trackables = new Trackable[4] { 
-            new Trackable(Root.transform.position, Quaternion.Euler(0, rootRot.y, 0)),
-            new Trackable(Root.transform.InverseTransformPoint(Head.transform.position), Head.transform.rotation),
-            new Trackable(Root.transform.InverseTransformPoint(LeftHand.transform.position), LeftHand.transform.rotation),
-            new Trackable(Root.transform.InverseTransformPoint(RightHand.transform.position), RightHand.transform.rotation)
+            new Trackable(Root.transform),
+            new Trackable(Head.transform),
+            new Trackable(LeftHand.transform),
+            new Trackable(RightHand.transform),
+            // new Trackable(new Vector3(rootPos.x, rootPos.y, 0), Quaternion.Euler(0, rootRot.y, 0)),
+            // new Trackable(Root.transform.InverseTransformPoint(Head.transform.position), Head.transform.rotation),
+            // new Trackable(Root.transform.InverseTransformPoint(LeftHand.transform.position), LeftHand.transform.rotation),
+            // new Trackable(Root.transform.InverseTransformPoint(RightHand.transform.position), RightHand.transform.rotation)
         };
 
         return trackables;
