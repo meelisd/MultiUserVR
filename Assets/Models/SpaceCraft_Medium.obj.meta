@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: e1c9df20e0fc7e54ebc3063e5f2c69c0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: engine_corner_11
+    100002: engine_corner_12
+    100004: engine_high_16
+    100006: engine_high_17
+    100008: engine_large_10
+    100010: glass_low_2
+    100012: ship_frontEdge_3
+    100014: ship_hull_15
+    100016: //RootNode
+    100018: wind_endLow_13
+    100020: wind_endLow_18
+    400000: engine_corner_11
+    400002: engine_corner_12
+    400004: engine_high_16
+    400006: engine_high_17
+    400008: engine_large_10
+    400010: glass_low_2
+    400012: ship_frontEdge_3
+    400014: ship_hull_15
+    400016: //RootNode
+    400018: wind_endLow_13
+    400020: wind_endLow_18
+    2100000: _defaultMat
+    2100002: blueSteel
+    2100004: black
+    2100006: engine
+    2100008: customMaterial6
+    2300000: engine_corner_11
+    2300002: engine_corner_12
+    2300004: engine_high_16
+    2300006: engine_high_17
+    2300008: engine_large_10
+    2300010: glass_low_2
+    2300012: ship_frontEdge_3
+    2300014: ship_hull_15
+    2300016: wind_endLow_13
+    2300018: wind_endLow_18
+    3300000: engine_corner_11
+    3300002: engine_corner_12
+    3300004: engine_high_16
+    3300006: engine_high_17
+    3300008: engine_large_10
+    3300010: glass_low_2
+    3300012: ship_frontEdge_3
+    3300014: ship_hull_15
+    3300016: wind_endLow_13
+    3300018: wind_endLow_18
+    4300000: engine_corner_11
+    4300002: engine_corner_12
+    4300004: engine_high_16
+    4300006: engine_high_17
+    4300008: engine_large_10
+    4300010: glass_low_2
+    4300012: ship_frontEdge_3
+    4300014: ship_hull_15
+    4300016: wind_endLow_13
+    4300018: wind_endLow_18
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
