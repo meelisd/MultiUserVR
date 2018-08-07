@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23797820847274198}
   - component: {fileID: 64247413490750694}
   - component: {fileID: 114513623917502500}
+  - component: {fileID: 114641236560892134}
   m_Layer: 0
   m_Name: ship_frontEdge_3
   m_TagString: Untagged
@@ -42,6 +43,7 @@ GameObject:
   - component: {fileID: 23977422852755746}
   - component: {fileID: 64273965036281668}
   - component: {fileID: 114990951347563788}
+  - component: {fileID: 114261500750496528}
   m_Layer: 0
   m_Name: engine_large_10
   m_TagString: Untagged
@@ -61,6 +63,7 @@ GameObject:
   - component: {fileID: 23137415558253520}
   - component: {fileID: 64169528121566092}
   - component: {fileID: 114559282570026052}
+  - component: {fileID: 114126172078331142}
   m_Layer: 0
   m_Name: engine_side_8
   m_TagString: Untagged
@@ -80,6 +83,7 @@ GameObject:
   - component: {fileID: 23542602992363800}
   - component: {fileID: 64076892661976310}
   - component: {fileID: 114339374027922060}
+  - component: {fileID: 114283208160534170}
   m_Layer: 0
   m_Name: engine_side_7
   m_TagString: Untagged
@@ -99,7 +103,7 @@ GameObject:
   - component: {fileID: 114325793471713480}
   m_Layer: 0
   m_Name: SmallSpacecraftPuzzle
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +120,7 @@ GameObject:
   - component: {fileID: 23260431621602206}
   - component: {fileID: 64737759527330952}
   - component: {fileID: 114595352181690062}
+  - component: {fileID: 114834784738287632}
   m_Layer: 0
   m_Name: glass_low_2
   m_TagString: Untagged
@@ -493,6 +498,39 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: fd6a615606345bf4bac52f5a0f5d217c, type: 3}
+--- !u!114 &114126172078331142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520229290203410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114261500750496528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172850118057722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114283208160534170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583817943859466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114325793471713480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -567,6 +605,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61600245da543b14686ed87ab543af28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114641236560892134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098219591025102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114834784738287632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772227131734246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114914359568660390

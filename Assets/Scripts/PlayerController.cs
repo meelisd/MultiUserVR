@@ -98,4 +98,14 @@ public class PlayerController : NetworkBehaviour {
 
 	public override void OnStartLocalPlayer() {
 	}
+
+	public void UpdatePartPositionAndRotation(int partIndex, Vector3 position, Quaternion rotation) {
+		CmdUpdatePartPositionAndRotation(partIndex, position, rotation);
+	}
+  [Command]
+  public void CmdUpdatePartPositionAndRotation(int partIndex, Vector3 position, Quaternion rotation) {
+    Debug.Log("Receive update part command");
+	var puzzle = GameObject.FindWithTag("Puzzle").GetComponent<Puzzle>();
+    puzzle.UpdatePartPositionAndRotation(partIndex, position, rotation);
+  }
 }

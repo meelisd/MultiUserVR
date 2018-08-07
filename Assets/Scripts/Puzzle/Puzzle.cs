@@ -1,12 +1,16 @@
+using System;
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Valve.VR.InteractionSystem;
 
 public class Puzzle : NetworkBehaviour {
   PuzzlePart[] _parts;
   int[] _partClaims;
   TrackableSyncList _partTrackables = new TrackableSyncList();
-
+  Dictionary<int, Hand> trackedParts = new Dictionary<int, Hand>();
+  
   public override void OnStartServer() {
     if (_parts == null) {
       _parts = GetComponentsInChildren<PuzzlePart>();
@@ -61,33 +65,35 @@ public class Puzzle : NetworkBehaviour {
 
         for(var i = 0; i < _parts.Length; i++) {
           _parts[i].SetTrackable(_partTrackables[i]);
+
+          if (trackedParts.ContainsKey(i)) {
+            var hand = trackedParts[i];
+            UpdatePartPositionAndRotation(i, hand.transform.position, hand.transform.rotation);
+          }
         }
 			}
 		}
 	}
 
-  public void ClaimPart(int playerId, int partIndex) {
-    if (!isServer) {
-      return;
+  public void UpdatePartPositionAndRotation(int partIndex, Vector3 position, Quaternion rotation) {
+    if (isServer) {
+      Debug.Log("Update transform of part " + partIndex);
+      _parts[partIndex].transform.SetPositionAndRotation(position, rotation);
+    } else {
+      Debug.Log("Send update part command: " + position + " - " + rotation);
+      GameObject.FindWithTag("Player").GetComponent<PlayerController>().UpdatePartPositionAndRotation(partIndex, position, rotation);
     }
-
-    if (_partClaims[partIndex] != -1) {
-      return;
-    }
-
-    _partClaims[partIndex] = playerId;
+  }
+  
+  public void TrackPuzzlePart(PuzzlePart part, Hand hand) {
+    var partIndex = Array.IndexOf(_parts, part);
+    Debug.Log("Track part " + partIndex + " with hand " + hand.name);
+    trackedParts[partIndex] = hand; 
   }
 
-  public void ReleasePart(int playerId, int partIndex) {
-    if (!isServer) {
-      return;
-    }
-
-    if (_partClaims[partIndex] != playerId) {
-      return;
-    }
-
-    _partClaims[partIndex] = -1;
+  public void ReleasePuzzlePart(PuzzlePart part, Hand hand) {
+    var partIndex = Array.IndexOf(_parts, part);
+    Debug.Log("Release part " + partIndex + " from hand " + hand.name);
+    trackedParts.Remove(partIndex);
   }
-
 }
