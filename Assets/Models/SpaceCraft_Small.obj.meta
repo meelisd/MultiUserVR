@@ -9,32 +9,45 @@ ModelImporter:
     100006: glass_low_2
     100008: ship_frontEdge_3
     100010: //RootNode
+    100012: default
     400000: engine_large_10
     400002: engine_side_7
     400004: engine_side_8
     400006: glass_low_2
     400008: ship_frontEdge_3
     400010: //RootNode
+    400012: default
     2100000: _defaultMat
     2100002: engine
     2100004: black
     2100006: blueSteel
     2100008: glass
+    2100010: black_(Instance)_(Instance)
+    2100012: _defaultMat_(Instance)_(Instance)
+    2100014: engine_(Instance)
+    2100016: blueSteel_(Instance)_(Instance)
+    2100018: black_(Instance)
+    2100020: blueSteel_(Instance)
+    2100022: _defaultMat_(Instance)
+    2100024: glass_(Instance)
     2300000: engine_large_10
     2300002: engine_side_7
     2300004: engine_side_8
     2300006: glass_low_2
     2300008: ship_frontEdge_3
+    2300010: default
     3300000: engine_large_10
     3300002: engine_side_7
     3300004: engine_side_8
     3300006: glass_low_2
     3300008: ship_frontEdge_3
+    3300010: default
     4300000: engine_large_10
     4300002: engine_side_7
     4300004: engine_side_8
     4300006: glass_low_2
     4300008: ship_frontEdge_3
+    4300010: default
   externalObjects: {}
   materials:
     importMaterials: 1
