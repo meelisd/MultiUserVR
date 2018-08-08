@@ -10,6 +10,17 @@ public class Puzzle : NetworkBehaviour {
   int[] _partClaims;
   TrackableSyncList _partTrackables = new TrackableSyncList();
   Dictionary<int, Hand> trackedParts = new Dictionary<int, Hand>();
+
+  PlayerController _localPlayer;
+  PlayerController LocalPlayer {
+    get {
+      if (_localPlayer == null) {
+        _localPlayer = GameObject.FindGameObjectsWithTag("Player").Select(pc => pc.GetComponent<PlayerController>()).Where(pc => pc.isLocalPlayer).FirstOrDefault();
+      }
+
+      return _localPlayer;
+    }
+  }
   
   public override void OnStartServer() {
     if (_parts == null) {
@@ -66,7 +77,7 @@ public class Puzzle : NetworkBehaviour {
         for(var i = 0; i < _parts.Length; i++) {
           _parts[i].SetTrackable(_partTrackables[i]);
 
-          if (trackedParts.ContainsKey(i)) {
+          if (LocalPlayer != null && trackedParts.ContainsKey(i)) {
             var hand = trackedParts[i];
             UpdatePartPositionAndRotation(i, hand.transform.position, hand.transform.rotation);
           }
@@ -77,23 +88,19 @@ public class Puzzle : NetworkBehaviour {
 
   public void UpdatePartPositionAndRotation(int partIndex, Vector3 position, Quaternion rotation) {
     if (isServer) {
-      Debug.Log("Update transform of part " + partIndex);
       _parts[partIndex].transform.SetPositionAndRotation(position, rotation);
     } else {
-      Debug.Log("Send update part command: " + position + " - " + rotation);
-      GameObject.FindWithTag("Player").GetComponent<PlayerController>().UpdatePartPositionAndRotation(partIndex, position, rotation);
+      LocalPlayer.UpdatePartPositionAndRotation(partIndex, position, rotation);
     }
   }
   
   public void TrackPuzzlePart(PuzzlePart part, Hand hand) {
     var partIndex = Array.IndexOf(_parts, part);
-    Debug.Log("Track part " + partIndex + " with hand " + hand.name);
     trackedParts[partIndex] = hand; 
   }
 
   public void ReleasePuzzlePart(PuzzlePart part, Hand hand) {
     var partIndex = Array.IndexOf(_parts, part);
-    Debug.Log("Release part " + partIndex + " from hand " + hand.name);
     trackedParts.Remove(partIndex);
   }
 }
