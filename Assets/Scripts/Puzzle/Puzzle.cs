@@ -21,6 +21,8 @@ public class Puzzle : NetworkBehaviour {
       return _localPlayer;
     }
   }
+
+  public float ShuffleRadius = 1;
   
   public override void OnStartServer() {
     if (_parts == null) {
@@ -30,6 +32,8 @@ public class Puzzle : NetworkBehaviour {
       foreach (var part in _parts) {
         _partTrackables.Add(new Trackable(part.transform));
       }
+
+      Shuffle();
     }
   }
 
@@ -41,7 +45,15 @@ public class Puzzle : NetworkBehaviour {
   }
 
   public void Shuffle() {
+    if (isServer) {
+      var circle = Mathf.Deg2Rad * 360;
+      var intervalRads = circle / _parts.Count();
 
+      for(var i = 0; i < _parts.Count(); i++) {
+        var shuffeledPosition = new Vector3(Mathf.Sin(i * intervalRads), transform.position.y, Mathf.Cos(i * intervalRads));
+        _parts[i].transform.localPosition = shuffeledPosition;
+      }
+    }
   }
   public void SyncMyTrackables() {
     var trackables = _parts.Select(p => p.GetTrackable());
@@ -54,7 +66,7 @@ public class Puzzle : NetworkBehaviour {
     }
 
     if (trackables.Length != _parts.Length) {
-      Debug.LogWarning("Trackables should be the same length as parts, skip sync");
+      Debug.LogWarning("Trackables should be the same length as parts " + _partTrackables.Count + "/" + _parts.Length + ", skip sync");
       return;
     }
 
